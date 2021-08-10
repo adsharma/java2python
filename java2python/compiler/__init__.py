@@ -7,15 +7,13 @@
 # instead of using directly referencing items within the subpackage.
 
 from java2python.compiler.block import Module
-from java2python.lang import Lexer, Parser, StringStream, TokenStream, TreeAdaptor
+from java2python.lang import Lexer, Parser, StringStream, TokenStream
 
 
 def buildAST(source):
     """ Returns an AST for the given source. """
     lexer = Lexer(StringStream(source))
     parser = Parser(TokenStream(lexer))
-    adapter = TreeAdaptor(lexer, parser)
-    parser.setTreeAdaptor(adapter)
     scope = parser.javaSource()
     return scope.tree
 
