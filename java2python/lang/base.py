@@ -99,7 +99,7 @@ class Tokens(object):
         module = self.parserModule
         if module:
             return module
-        import java2python.lang.Java9Parser as module
+        import java2python.lang.JavaParser as module
         self.parserModule = module
         return module
 

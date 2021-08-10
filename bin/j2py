@@ -9,7 +9,7 @@ a file, translate it, and write it out.
 import sys
 from argparse import ArgumentParser, ArgumentTypeError
 from collections import defaultdict
-from logging import _levelNames as logLevels, exception, warning, info, basicConfig
+from logging import _nameToLevel as logLevels, exception, warning, info, basicConfig
 from os import path, makedirs
 from time import time
 
