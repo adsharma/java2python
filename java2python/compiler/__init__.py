@@ -22,10 +22,10 @@ def buildAST(source):
 
 def buildJavaDocAST(source):
     """ Returns an AST for the given javadoc source. """
-    from java2python.lang.JavaDocLexer import JavaDocLexer
-    from java2python.lang.JavaDocParser import JavaDocParser
-    lexer = JavaDocLexer(StringStream(source))
-    parser = JavaDocParser(TokenStream(lexer))
+    from java2python.lang.JavadocLexer import JavadocLexer
+    from java2python.lang.JavadocParser import JavaDocParser
+    lexer = JavadocLexer(StringStream(source))
+    parser = JavadocParser(TokenStream(lexer))
     scope = parser.commentBody()
     return scope.tree
 
