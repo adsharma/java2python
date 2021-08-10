@@ -1,15 +1,15 @@
 .PHONY: all clean
 .SILENT: clean
 
-all: JavaParser.py JavaLexer.py
+all: Java9Parser.py Java9Lexer.py
 
 
-JavaParser.py: Java.g
-	antlr3 Java.g
+Java9Parser.py: Java9Parser.g4 Java9Lexer.py
+	antlr4 -Dlanguage=Python3 Java9Lexer.g4
 
 
-JavaLexer.py: Java.g
-	antlr3 Java.g
+Java9Lexer.py: Java9Lexer.g4
+	antlr4 -Dlanguage=Python3 Java9Parser.g4
 
 
 clean:
